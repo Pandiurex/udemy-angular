@@ -16,18 +16,17 @@ export class InfoPaginaService {
     this.cargarEquipo();
     }
 
-    private cargarInfo(){
+    private cargarInfo() {
       this.http.get('assets/data/data-pagina.json')
       .subscribe((resp: InfoPagina) => {
         this.cargada = true;
         this.info = resp;
       });
   }
-  private cargarEquipo(){
+  private cargarEquipo() {
     this.http.get('https://angular-udemy-93d4b.firebaseio.com/equipo.json')
       .subscribe((resp) => {
         this.equipo = resp;
-        console.log(resp);
       });
   }
 }
